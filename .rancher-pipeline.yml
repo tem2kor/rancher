@@ -1,9 +1,8 @@
 stages:
 - name: BuildImage
   steps:
-  - publishImageConfig:
-      dockerfilePath: ./Dockerfile
-      buildContext: .
-      tag: boschApp
+  - runScriptConfig:
+      image: python:latest
+      shellScript: docker build -t dockerfile .
 timeout: 60
 notification: {}
